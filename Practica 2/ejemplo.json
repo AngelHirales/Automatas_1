@@ -1,0 +1,11 @@
+{
+    "arrayColores":[{
+            "nombre":"juan",
+            "edad":"43"
+        },
+        {
+            "nombreColor":"azul",
+            "valorHexadec":"#00f"
+        }
+    ]
+}
