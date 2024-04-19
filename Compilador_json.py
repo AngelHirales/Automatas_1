@@ -1,3 +1,4 @@
+# importar libreria para trabajar con json
 import json
 
 
@@ -31,13 +32,15 @@ def tokenizar(file):
     return diccionario_tokens
 
 
+# agrupa los caracteres dentro de comillas como palabras y asigna el token 999
 def tokenizar_palabra(file):
     lista_tokens = {}
     palabra = ''
     en_comillas = False
 
     for char in file:
-        if char == chr(34):  # Caracter de comillas dobles
+        # Caracter de comillas dobles
+        if char == chr(34):
             if en_comillas:
                 # Fin de palabra y asignar token 999
                 lista_tokens[palabra] = 999
@@ -61,7 +64,7 @@ def tokenizar_palabra(file):
     array_tokens = list(lista_tokens.values())
     return lista_tokens, array_tokens
 
-# imprime el contenido del archivo y su token
+# imprime el contenido del archivo y sus tokens correspondientes
 def imprimir_tokens(file, tokens):
     for char in file:
         if char == chr(10):
@@ -94,6 +97,7 @@ def validar_json(array):
             exit(1)
 
 
+# comprueba si se cerraron las comillas
 def comillas_cerradas(array):
     bandera = True
     if bandera == True :
@@ -127,7 +131,7 @@ def main():
     print('-----------------------------------------------------------------------------------------------------------------------------')
    
     # Imprime el array de los tokens
-    #print(array_tokens)
+    print(array_tokens)
     
     # Imprime un error en caso de que la comilla no este cerrada
     print(comillas_cerradas(array_tokens))
