@@ -161,15 +161,6 @@ def escribir_archivo(file, tokens):
         return output,lista_tokens,array_tokens
 
 
-# Comprueba que el archivo cargado es un json        
-def validar_json(array):
-        if array[0] == 123:
-            True
-        else:
-            print('no es archivo json')
-            exit(1)
-
-
 # comprueba si se cerraron las comillas
 def comillas_cerradas(array):
     bandera = True
