@@ -18,7 +18,7 @@ def leer_json(file_to_read):
         exit(1)
 
 
-# array para manejar los tokens
+# array para almacenar los tokens generados
 array_tokens = []
 
 
