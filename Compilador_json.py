@@ -135,11 +135,11 @@ def escribir_archivo(file, tokens):
 
             elif char == chr(10):
                 # Salto de línea
-                output.write(f'{tokens[char]}\n')
+                output.write(f'{tokens[char]}=[ENTER]\n')
 
             elif char == chr(32):
                 # Espacio en blanco
-                output.write(f'{tokens[char]}\n')
+                output.write(f'{tokens[char]}=[ESPACIO]\n')
 
             elif char in tokens:
                 # Caracter normal
