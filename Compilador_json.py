@@ -137,6 +137,7 @@ def escribir_archivo(file, tokens):
         lista_tokens = {}
         palabra = ''
         en_comillas = False
+        consecutive_spaces = 0
 
         for char in file:
             if char == chr(34):
@@ -152,7 +153,10 @@ def escribir_archivo(file, tokens):
             elif char == '\n':
                 output.write(f'{tokens[char]}=[ENTER]\n')
             elif char == ' ':
-                output.write(f'{tokens[char]}=[ESPACIO]\n')
+                consecutive_spaces += 1
+                if consecutive_spaces == 4:
+                    output.write(f'{tokens[char]}=[TAB]\n')
+                    consecutive_spaces = 0
             elif char in tokens:
                 output.write(f'{tokens[char]}={char}\n')
             else:
