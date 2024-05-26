@@ -3,6 +3,9 @@
 
 ### Este proyecto tiene como objetivo crear un compilador/lector de archivos JSON, lo cual hace de la siguiente manera:
 ### Al colocar el nombre del archivo que deseas leer o ejecutar en la funcion main, este leera el contenido del archivo, asignando token unicode a cada uno de los caracteres o palabras que encuentre en el archivo json.
+##
+##
+
 ## -- el programa es capaz de realizar lo siguiente hasta el momento:
 ### 1. Lee el contenido del archivo JSON y separa los caracteres y las palabras (el contenido que se encuentra dentro de comillas dobles) asignando su valor unicode correspondiente.
 ### 2. Para el contenido dentro de comillas, se asigna el valor 999 como token.
