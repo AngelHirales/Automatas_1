@@ -1,6 +1,7 @@
 ## ﻿Automatas_1
 ## Angel Gabriel Hirales Guzman
 # Compilador / Lector de archivos json
+```bash
 npm install
  
 # Instrucciones para utilizar el codigo:
