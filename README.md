@@ -1,6 +1,7 @@
 ## ﻿Automatas_1
 ## Angel Gabriel Hirales Guzman
-# Lector de archivos json
+# Compilador / Lector de archivos json
+npm install
  
 # Instrucciones para utilizar el codigo:
 ## 1- Coloca un archivo json en una carpeta junto con el codigo
