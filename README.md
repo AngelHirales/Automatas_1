@@ -36,3 +36,6 @@ python compilador_json.py
 ```bash
 python3 compilador_json.py
 ```
+##
+
+### Asegurate que la ruta que muestra en consola sea la misma donde se encuentra el codigo y el archivo JSON, de lo contrario no podras ejecutarlo correctamente.
