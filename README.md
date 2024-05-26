@@ -1,4 +1,4 @@
-## Compilador / Lector de archivos json
+# Compilador / Lector de archivos json
 ### Este proyecto tiene como objetivo crear un compilador de archivos JSON, lo cual hace de la siguiente manera:
 ### Al colocar el nombre del archivo que deseas leer o ejecutar en la funcion main, este leera el contenido del archivo, asignando token unicode a cada uno de los caracteres o palabras que encuentre en el archivo json.
 ### 
