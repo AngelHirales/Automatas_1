@@ -6,10 +6,8 @@
 
 ## Instrucciones para utilizar el codigo:
 ### 1. Tener instalado visual studio code y python en un computadora.
-### descarga visual studio code aqui:
-```bash
-https://code.visualstudio.com
-```
+[descarga visual studio code aqui: ] (https://code.visualstudio.com)
+
 ### descarga python aqui:
 ```bash
 https://www.python.org/downloads/
