@@ -14,9 +14,9 @@
 ## -- Instrucciones para utilizar el codigo:
 ### 1. Tener instalado visual studio code y python en un computadora.
 ### descarga visual studio code aqui:
-https://code.visualstudio.com
+    https://code.visualstudio.com
 ### descarga python aqui:
-https://www.python.org/downloads/
+    https://www.python.org/downloads/
 ### 2- Descarga el codigo como .zip.
 ### 3- coloca o crea el archivo json que deseas ejecutar en la misma carpeta donde esta el codigo.
 ### 4- En la funcion main cambia el nombre "json_example.txt" por el nombre del archivo que deseas leer.
