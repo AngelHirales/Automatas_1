@@ -1,7 +1,6 @@
 # Compilador / Lector de archivos json
 ### Este proyecto tiene como objetivo crear un compilador de archivos JSON, lo cual hace de la siguiente manera:
 ### Al colocar el nombre del archivo que deseas leer o ejecutar en la funcion main, este leera el contenido del archivo, asignando token unicode a cada uno de los caracteres o palabras que encuentre en el archivo json.
-### 
 ## 
 
 ## Instrucciones para utilizar el codigo:
@@ -10,10 +9,10 @@
 https://code.visualstudio.com
 ### descarga python aqui:
 https://www.python.org/downloads/
-
-### 2- Descarga el codigo como .zip y coloca o crea el archivo json que deseas ejecutar en la misma carpeta de el codigo
-### 3- En la funcion main cambia el nombre "json_example.txt" por el nombre del archivo que deseas leer
-### 4- Ejecuta el programa por medio de la consola o en la interfaz de visual studio, obtendras una salida tanto en consola como en un archivo de texto con el nombre "output.txt"
+### 2- Descarga el codigo como .zip.
+### 3- coloca o crea el archivo json que deseas ejecutar en la misma carpeta donde esta el codigo.
+### 4- En la funcion main cambia el nombre "json_example.txt" por el nombre del archivo que deseas leer.
+### 5- Ejecuta el programa por medio de la consola o en la interfaz de visual studio, obtendras una salida tanto en consola como en un archivo de texto con el nombre "output.txt", con los caracteres y su valor unicode correspondiente.
 ## 
 
 ### Comando para ejecutar el proyecto desde la consola:
