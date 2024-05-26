@@ -9,6 +9,7 @@
 ### 3. Detecta si las comillas no se abren/cierran de manera correcta.
 ### 4. Es capaz de detectar si hay espacios o tabulaciones en el contenido del archivo.
 ## 
+##
 
 ## -- Instrucciones para utilizar el codigo:
 ### 1. Tener instalado visual studio code y python en un computadora.
@@ -21,6 +22,7 @@ https://www.python.org/downloads/
 ### 4- En la funcion main cambia el nombre "json_example.txt" por el nombre del archivo que deseas leer.
 ### 5- Ejecuta el programa por medio de la consola o en la interfaz de visual studio, obtendras una salida tanto en consola como en un archivo de texto con el nombre "output.txt", con los caracteres y su valor unicode correspondiente.
 ## 
+##
 
 ### Comando para ejecutar el proyecto desde la consola:
 ```bash
