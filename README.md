@@ -7,7 +7,7 @@
 ### 1. Lee el contenido del archivo JSON y separa los caracteres y las palabras (el contenido que se encuentra dentro de comillas dobles) asignando su valor unicode correspondiente.
 ### 2. Para el contenido dentro de comillas, se asigna el valor 999 como token.
 ### 3. Detecta si las comillas no se abren/cierran de manera correcta.
-### 4. Es capaz de detectar si hay espacios o tabulaciones en el contenido del archivo
+### 4. Es capaz de detectar si hay espacios o tabulaciones en el contenido del archivo.
 ## 
 
 ## -- Instrucciones para utilizar el codigo:
