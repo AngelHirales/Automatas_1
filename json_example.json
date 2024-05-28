@@ -1,7 +1,8 @@
 {
     "nombre":"juan",
+    "promedio":"12.2",
     "edad":"23",
     "nombreColor":"azul",
-    "valorHexadec":"#00f"
-    "fecha_nacimiento": "30/04/1980"
+    "valorHexadec":"#00f",
+    "fecha_nacimiento": "24/08/2012"
 }
