@@ -19,7 +19,7 @@
 ##
 
 ## que hace falta?
-### - no estoy seguro si deje algo pendiente, pero creo que no
+### - imprime las fechas 2 veces: una con el token 999 y otra con el token 203 lo cual debe corregirse
 ##
 
 ## proyecciones a futuro
