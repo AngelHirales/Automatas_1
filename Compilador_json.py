@@ -4,12 +4,18 @@ import json
 # ayuda:
 # token para palabra = 999
 # token para fecha = 203
+# token numeros enteros = 201
+# token numeros flotantes = 202
 
 # Leer el archivo JSON
 def leer_json(file_to_read):
     try:
         with open(file_to_read, 'r') as file:
             data = file.read()
+            # Verificar que el primer caracter sea '{' (valor Unicode 123)
+            if data and ord(data[0]) != 123:
+                print('❌Error: El archivo JSON no comienza con "{"❌')
+                exit(1)
         return data
     except FileNotFoundError:
         print('❗El archivo no existe o su nombre no es correcto❗')
@@ -17,6 +23,7 @@ def leer_json(file_to_read):
     except json.JSONDecodeError as e:
         print(f"❌Error: El archivo JSON no tiene un formato válido:{e}❌")
         exit(1)
+
 
 # Array para almacenar los tokens
 array_tokens = []
@@ -38,6 +45,7 @@ def es_fecha(cadena):
             return True
     return False
 
+
 # Imprime el contenido del archivo y sus tokens correspondientes
 def imprimir_tokens(file, tokens):
     lista_tokens = {}
@@ -53,6 +61,12 @@ def imprimir_tokens(file, tokens):
                 if es_fecha(palabra):
                     lista_tokens[palabra] = 203
                     print(f'203="{palabra}"')
+                if palabra.isdigit():  # Verificar si es un número entero
+                    lista_tokens[palabra] = 201
+                    print(f'201="{palabra}"')
+                elif '.' in palabra and all(part.isdigit() for part in palabra.split('.')):  # Verificar si es un número flotante
+                    lista_tokens[palabra] = 202
+                    print(f'202="{palabra}"')
                 else:
                     lista_tokens[palabra] = 999
                     print(f'999="{palabra}"')
@@ -78,8 +92,14 @@ def imprimir_tokens(file, tokens):
 
     if palabra:
         if es_fecha(palabra):
-            lista_tokens[palabra] = 203
-            print(f'203="{palabra}"')
+                    lista_tokens[palabra] = 203
+                    print(f'203="{palabra}"')
+        if palabra.isdigit():
+            lista_tokens[palabra] = 201
+            print(f'201="{palabra}"')
+        elif '.' in palabra and all(part.isdigit() for part in palabra.split('.')):
+            lista_tokens[palabra] = 202
+            print(f'202="{palabra}"')
         else:
             lista_tokens[palabra] = 999
             print(f'999="{palabra}"')
