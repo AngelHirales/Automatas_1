@@ -110,53 +110,64 @@ def imprimir_tokens(file, tokens):
 # Escribir un archivo output.txt los tokens y caracteres
 def escribir_archivo(file, tokens):
     with open('output.txt', 'w') as output:
-        lista_tokens = {}
-        palabra = ''
-        en_comillas = False
-        consecutive_spaces = 0
+            lista_tokens = {}
+            palabra = ''
+            en_comillas = False
+            consecutive_spaces = 0
 
-        i = 0
-        while i < len(file):
-            char = file[i]
-            if char == chr(34):  # Manejar comillas
-                if en_comillas:
-                    if es_fecha(palabra):
-                        lista_tokens[palabra] = 203
-                        output.write(f'203="{palabra}"\n')
+            i = 0
+            while i < len(file):
+                char = file[i]
+                if char == chr(34):  # Manejar comillas
+                    if en_comillas:
+                        if es_fecha(palabra):
+                            lista_tokens[palabra] = 203
+                            output.write(f'203="{palabra}"\n')
+                        if palabra.isdigit():  # Verificar si es un número entero
+                            lista_tokens[palabra] = 201
+                            output.write(f'201="{palabra}"\n')
+                        elif '.' in palabra and all(part.isdigit() for part in palabra.split('.')):  # Verificar si es un número flotante
+                            lista_tokens[palabra] = 202
+                            output.write(f'202="{palabra}"\n')
+                        else:
+                            lista_tokens[palabra] = 999
+                            output.write(f'999="{palabra}"\n')
+                        palabra = ''
+                        en_comillas = False
                     else:
-                        lista_tokens[palabra] = 999
-                        output.write(f'999="{palabra}"\n')
-                    palabra = ''
-                    en_comillas = False
+                        en_comillas = True
+                elif en_comillas:
+                    palabra += char
+                elif char == '\n':
+                    output.write(f'{tokens[char]}=[ENTER]\n')
+                elif char == ' ':
+                    consecutive_spaces += 1
+                    if consecutive_spaces == 4:
+                        output.write(f'{tokens[char]}=[TAB]\n')
+                        consecutive_spaces = 0
+                elif char in tokens:
+                    output.write(f'{tokens[char]}={char}\n')
                 else:
-                    en_comillas = True
-            elif en_comillas:
-                palabra += char
-            elif char == '\n':
-                output.write(f'{tokens[char]}=[ENTER]\n')
-            elif char == ' ':
-                consecutive_spaces += 1
-                if consecutive_spaces == 4:
-                    output.write(f'{tokens[char]}=[TAB]\n')
-                    consecutive_spaces = 0
-            elif char in tokens:
-                output.write(f'{tokens[char]}={char}\n')
-            else:
-                value = ord(char)
-                lista_tokens[char] = value
-                output.write(char)
-            i += 1
+                    value = ord(char)
+                    lista_tokens[char] = value
+                i += 1
 
-        if palabra:
-            if es_fecha(palabra):
-                lista_tokens[palabra] = 203
-                output.write(f'203="{palabra}"\n')
-            else:
-                lista_tokens[palabra] = 999
-                output.write(f'999="{palabra}"\n')
+            if palabra:
+                if es_fecha(palabra):
+                    lista_tokens[palabra] = 203
+                    output.write(f'203="{palabra}"\n')
+                if palabra.isdigit():
+                    lista_tokens[palabra] = 201
+                    output.write(f'201="{palabra}"\n')
+                elif '.' in palabra and all(part.isdigit() for part in palabra.split('.')):
+                    lista_tokens[palabra] = 202
+                    output.write(f'202="{palabra}"\n')
+                else:
+                    lista_tokens[palabra] = 999
+                    output.write(f'999="{palabra}"\n')
 
-        array_tokens = list(lista_tokens.values())
-        return output, lista_tokens, array_tokens
+            array_tokens = list(lista_tokens.values())
+            return lista_tokens, array_tokens
 
 def comillas_cerradas(array):
     bandera = False
